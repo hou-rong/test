@@ -1,0 +1,10 @@
+FROM microsoft/nanoserver:10.0.14393.1884
+
+LABEL maintainer="Hou Rong <nmghr9@gmail.com>" \
+  org.label-schema.name="Drone Baidu Sitemap" \
+  org.label-schema.vendor="Hou Rong" \
+  org.label-schema.schema-version="1.0"
+
+COPY drone-baidu-sitemap.exe /drone-baidu-sitemap.exe
+
+ENTRYPOINT [ "\\drone-baidu-sitemap.exe" ]
