@@ -11,9 +11,11 @@ import (
 	"strings"
 )
 
+// SiteMapControllerImpl 百度 SiteMap 控制器实现
 type SiteMapControllerImpl struct {
 }
 
+// SiteMap 百度 SitMap Xml 对象
 type SiteMap struct {
 	XMLName xml.Name `xml:"urlset"`
 	Text    string   `xml:",chardata"`
@@ -29,16 +31,19 @@ type SiteMap struct {
 
 var _ controller.SiteMapController = (*SiteMapControllerImpl)(nil)
 
+// DefaultSiteMapController default...
 var DefaultSiteMapController *SiteMapControllerImpl
 
 func init() {
 	DefaultSiteMapController = NewSiteMapController()
 }
 
+// NewSiteMapController new...
 func NewSiteMapController() *SiteMapControllerImpl {
 	return &SiteMapControllerImpl{}
 }
 
+// GetSiteMapUrls 从 xml 中获取 url 列表
 func (c *SiteMapControllerImpl) GetSiteMapUrls(ctx context.Context, path string) (urls []string) {
 	xmlFile, err := os.Open(path)
 	if err != nil {
@@ -57,6 +62,7 @@ func (c *SiteMapControllerImpl) GetSiteMapUrls(ctx context.Context, path string)
 	return
 }
 
+// SendData 实时更新 url 请求
 func (c *SiteMapControllerImpl) SendData(ctx context.Context, site, token, data string) {
 	body := strings.NewReader(data)
 	client := &http.Client{}
