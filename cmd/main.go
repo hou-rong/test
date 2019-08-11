@@ -1,8 +1,8 @@
 package main
 
 import (
-	"../pkg/controller/impl"
 	"context"
+	"home.hourong.me/HenryHou/drone-baidu-sitemap/pkg/controller/impl"
 	"os"
 	"strings"
 )
