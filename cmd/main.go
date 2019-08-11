@@ -1,8 +1,8 @@
 package main
 
 import (
+	"../pkg/controller/impl"
 	"context"
-	"home.hourong.me/HenryHou/drone-baidu-sitemap/pkg/controller/impl"
 	"os"
 	"strings"
 )
@@ -10,9 +10,9 @@ import (
 func main() {
 	ctx := context.Background()
 
-	site:=os.Getenv("PLUGIN_SITE")
-	token:=os.Getenv("PLUGIN_TOKEN")
-	path:=os.Getenv("PLUGIN_PATH")
+	site := os.Getenv("PLUGIN_SITE")
+	token := os.Getenv("PLUGIN_TOKEN")
+	path := os.Getenv("PLUGIN_PATH")
 
 	SiteMapController := impl.DefaultSiteMapController
 	urls := SiteMapController.GetSiteMapUrls(ctx, path)
