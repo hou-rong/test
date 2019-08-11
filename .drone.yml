@@ -229,7 +229,7 @@ trigger:
   - "refs/tags/**"
 
 depends_on:
-- testing
+- linux-amd64
 
 ---
 kind: pipeline
@@ -312,7 +312,7 @@ trigger:
   - "refs/tags/**"
 
 depends_on:
-- testing
+- linux-arm64
 
 ---
 kind: pipeline
