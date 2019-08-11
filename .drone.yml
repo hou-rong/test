@@ -114,6 +114,7 @@ steps:
     dry_run: true
     repo: henryhou009/drone-baidu-sitemap
     tags: linux-amd64
+    storage_driver: vfs
   when:
     event:
     - pull_request
@@ -132,6 +133,7 @@ steps:
     repo: henryhou009/drone-baidu-sitemap
     username:
       from_secret: docker_username
+    storage_driver: vfs
   when:
     event:
       exclude:
@@ -195,6 +197,7 @@ steps:
     dry_run: true
     repo: henryhou009/drone-baidu-sitemap
     tags: linux-arm64
+    storage_driver: vfs
   when:
     event:
     - pull_request
@@ -213,6 +216,7 @@ steps:
     repo: henryhou009/drone-baidu-sitemap
     username:
       from_secret: docker_username
+    storage_driver: vfs
   when:
     event:
       exclude:
@@ -276,6 +280,7 @@ steps:
     dry_run: true
     repo: henryhou009/drone-baidu-sitemap
     tags: linux-arm
+    storage_driver: vfs
   when:
     event:
     - pull_request
@@ -294,6 +299,7 @@ steps:
     repo: henryhou009/drone-baidu-sitemap
     username:
       from_secret: docker_username
+    storage_driver: vfs
   when:
     event:
       exclude:
